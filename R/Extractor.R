@@ -36,11 +36,11 @@ Extractor <- function(exname, content, asText = TRUE, ...){
 	ex <- .jnew(expath)
 	content <- .jcall(ex, returnSig = "S", method = "getText", excontent, ...)
 	
-	#FIXME: Encoding problems on windows workaround
-	if(.Platform$OS.type == "windows"){
-		content <- iconv(content, "UTF-8", "latin1")
-	}
-		
+	# #FIXME: Encoding problems on windows workaround
+	# if(.Platform$OS.type == "windows"){
+	# 	content <- iconv(content, "UTF-8", "latin1")
+	# }
+	# 	
 	content
 }
 
